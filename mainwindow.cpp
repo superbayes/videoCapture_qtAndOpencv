@@ -11,9 +11,9 @@ MainWindow::MainWindow(QWidget *parent)
     videoThread = new MyTHread();
     videoThread->moveToThread(thread);
 
-    connect(ui->pushButton,&QPushButton::clicked,this,[&](){
+    connect(ui->pB_open,&QPushButton::clicked,this,[&](){
         thread->start();
-        emit signal_openVideo();
+        emit signal_openVideo(0);
     });
     connect(this,&MainWindow::signal_openVideo,videoThread,&MyTHread::videoThread);
     connect(videoThread,&MyTHread::signal_frame,this,[&](cv::Mat& frame){
@@ -24,10 +24,7 @@ MainWindow::MainWindow(QWidget *parent)
     });
 
 
-
-
     connect(this,&MainWindow::destroyed,[&](){
-
         videoThread->flag_exitCamera = true;
         thread->quit();
         thread->wait();
@@ -66,3 +63,19 @@ QImage MainWindow::Mat2QImage(const cv::Mat &InputMat)
     return Result;
 }
 
+
+void MainWindow::on_pB_configCamera_clicked()
+{
+    qDebug()<<"启相机参数自调节模式";
+    if(thread->isRunning()){
+        videoThread->Capture.set(cv::CAP_PROP_SETTINGS, 1);//开启相机参数自调节模式
+    }
+}
+
+void MainWindow::on_actioncamera_config_triggered()
+{
+    qDebug()<<"启相机参数自调节模式";
+//    if(thread->isRunning()){
+//        videoThread->Capture.set(cv::CAP_PROP_SETTINGS, 1);//开启相机参数自调节模式
+//    }
+}

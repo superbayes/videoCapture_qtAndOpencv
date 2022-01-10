@@ -30,10 +30,10 @@
      <string>TextLabel</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QPushButton" name="pB_open">
     <property name="geometry">
      <rect>
-      <x>630</x>
+      <x>610</x>
       <y>20</y>
       <width>111</width>
       <height>31</height>
@@ -41,6 +41,19 @@
     </property>
     <property name="text">
      <string>open</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pB_configCamera">
+    <property name="geometry">
+     <rect>
+      <x>610</x>
+      <y>50</y>
+      <width>111</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>配置相机参数</string>
     </property>
    </widget>
   </widget>
@@ -53,8 +66,20 @@
      <height>23</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menuexit">
+    <property name="title">
+     <string>exit</string>
+    </property>
+    <addaction name="actioncamera_config"/>
+   </widget>
+   <addaction name="menuexit"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
+  <action name="actioncamera_config">
+   <property name="text">
+    <string>camera_config</string>
+   </property>
+  </action>
  </widget>
  <resources/>
  <connections/>
