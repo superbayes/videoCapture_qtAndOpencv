@@ -31,12 +31,12 @@ TRANSLATIONS += \
     videoCapture_zh_CN.ts
 
 #OpenCV
-INCLUDEPATH += D:\ProgramData\OpenCv\opencv_452\build\include
+INCLUDEPATH += D:\ProgramData\opencv_451\build\include
 
 CONFIG(release,debug|release){
-LIBS += -LD:\ProgramData\OpenCv\opencv_452\build\x64\vc15 -lopencv_world452
+LIBS += -LD:\ProgramData\opencv_451\build\x64\vc15\lib -lopencv_world451
 }else{
-LIBS += -LD:\ProgramData\OpenCv\opencv_452\build\x64\vc15 -lopencv_world452d
+LIBS += -LD:\ProgramData\opencv_451\build\x64\vc15\lib -lopencv_world451d
 }
 
 # Default rules for deployment.
