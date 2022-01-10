@@ -5,3 +5,5 @@ qtAndOpencv,videoCapture
 
 * Qt 5.12.9
 
+* opencv 4.5.1
+
