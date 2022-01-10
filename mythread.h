@@ -14,8 +14,9 @@ public:
 public:
     bool flag_exitCamera = false;
     cv::Mat frame;
+    cv::VideoCapture Capture;
 public:
-    void videoThread(/*int deviceNo = 0*/);
+    void videoThread(int deviceNo = 0);
 signals:
     void signal_frame(cv::Mat& img);
 
