@@ -28,7 +28,7 @@ public:
 public:
     QImage Mat2QImage(const cv::Mat& InputMat);
 signals:
-    void signal_openVideo();
+    void signal_openVideo(int deviceid);
 private:
     Ui::MainWindow *ui;
 };

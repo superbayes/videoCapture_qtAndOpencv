@@ -13,7 +13,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     connect(ui->pushButton,&QPushButton::clicked,this,[&](){
         thread->start();
-        emit signal_openVideo();
+        emit signal_openVideo(0);
     });
     connect(this,&MainWindow::signal_openVideo,videoThread,&MyTHread::videoThread);
     connect(videoThread,&MyTHread::signal_frame,this,[&](cv::Mat& frame){
@@ -24,10 +24,7 @@ MainWindow::MainWindow(QWidget *parent)
     });
 
 
-
-
     connect(this,&MainWindow::destroyed,[&](){
-
         videoThread->flag_exitCamera = true;
         thread->quit();
         thread->wait();
