@@ -12,8 +12,8 @@ void MyTHread::videoThread(int deviceNo)
 //    cv::VideoCapture Capture(0);
     Capture.open(deviceNo);
     if(!Capture.isOpened()) return;
-    //Capture.set(cv::CAP_PROP_FRAME_WIDTH, 1920);//宽度
-    //Capture.set(cv::CAP_PROP_FRAME_HEIGHT, 1080);//高度
+    Capture.set(cv::CAP_PROP_FRAME_WIDTH, 1920);//宽度
+    Capture.set(cv::CAP_PROP_FRAME_HEIGHT, 1080);//高度
     //Capture.set(cv::CAP_PROP_FPS, 30);//帧数
     //Capture.set(cv::CAP_PROP_BRIGHTNESS, 100);//亮度 100
     //Capture.set(cv::CAP_PROP_CONTRAST,40);//对比度 40
