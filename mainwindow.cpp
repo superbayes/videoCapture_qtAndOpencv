@@ -75,7 +75,7 @@ void MainWindow::on_pB_configCamera_clicked()
 void MainWindow::on_actioncamera_config_triggered()
 {
     qDebug()<<"启相机参数自调节模式";
-//    if(thread->isRunning()){
-//        videoThread->Capture.set(cv::CAP_PROP_SETTINGS, 1);//开启相机参数自调节模式
-//    }
+    if(thread->isRunning()){
+        videoThread->Capture.set(cv::CAP_PROP_SETTINGS, 1);//开启相机参数自调节模式
+    }
 }
