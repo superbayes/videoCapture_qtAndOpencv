@@ -29,6 +29,9 @@ public:
     QImage Mat2QImage(const cv::Mat& InputMat);
 signals:
     void signal_openVideo(int deviceid);
+private slots:
+    void on_pB_cameraConfig_clicked();
+
 private:
     Ui::MainWindow *ui;
 };
